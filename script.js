@@ -14,3 +14,14 @@ function getComputerChoice() {
 }
 
 console.log(getComputerChoice());
+
+//Single round of Rock-Paper-Scissors and has two parameters- playerSelection and computerSelection//
+function singleRound() {
+    //playerSelection parameter gets user input for hand played//
+    function playerSelection() {
+        let playerSelection = prompt("What hand do you want to play?");
+        let playerHand = playerSelection.charAt(0).toUpperCase() + playerSelection.toLowerCase().slice(1);
+        console.log(playerHand);
+    }
+    
+}
