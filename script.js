@@ -20,25 +20,34 @@ function game() {
             function playRound(playerSelection, computerSelection) { 
                 //If player chooses rock//
                 if (playerSelection === "Rock" && computerSelection === "Rock") {
-                    return "Tie. Try again."
+                    roundResult = "Tie. Try again.";
+                    return roundResult;
                 } else if (playerSelection === "Rock" && computerSelection === "Paper") {
-                    return "You lose. Paper beats Rock.";
+                    roundResult = "You lose. Paper beats Rock.";
+                    return roundResult;
                 } else if (playerSelection === "Rock" && computerSelection === "Scissors") {
-                    return "You win. Rock bests Scissors.";
+                    roundResult = "You win. Rock bests Scissors.";
+                    return roundResult;
                 //If player chooses paper//
                 } else if (playerSelection === "Paper" && computerSelection === "Paper") {
-                    return "Tie. Try again.";
+                    roundResult = "Tie. Try again.";
+                    return roundResult;
                 } else if (playerSelection === "Paper" && computerSelection === "Scissors") {
-                    return "You lose. Scissors beats Paper.";
+                    roundResult = "You lose. Scissors beats Paper.";
+                    return roundResult;
                 } else if (playerSelection === "Paper" && computerSelection === "Rock") {
-                    return "You win. Paper beats Rock.";
+                    roundResult = "You win. Paper beats Rock.";
+                    return roundResult;
                 //If player chooses scissors//
                 } else if (playerSelection === "Scissors" && computerSelection === "Scissors") {
-                    return "Tie. Try again.";
+                    roundResult = "Tie. Try again.";
+                    return roundResult;
                 } else if (playerSelection === "Scissors" && computerSelection === "Rock") {
-                    return "You lose. Rock beats Scissors.";
+                    roundResult = "You lose. Rock beats Scissors.";
+                    return roundResult;
                 } else (playerSelection === "Scissors" && computerSelection === "Paper")
-                    return "You win. Scissors beats Paper.";
+                    roundResult = "You win. Scissors beats Paper.";
+                    return roundResult;
             }
         }
 
@@ -54,4 +63,23 @@ function game() {
     }
 }
 
+function result() {
+    let playerScore = 0;
+    let computerScore = 0;
+    if (roundResult === "You lose. Paper beats Rock." || roundResult === "You lose. Scissors beats Paper." || roundResult === "You lose. Rock beats Scissors.") {
+        computerScore++;
+    } else if (roundResult === "You win. Rock bests Scissors." || roundResult === "You win. Paper beats Rock." || roundResult === "You win. Scissors beats Paper.") {
+        playerScore++;
+    }
+
+    if (playerScore > computerScore) {
+        return "Player wins!";
+    } else if (playerScore < computerScore) {
+        return "Computer wins!"
+    } else if (playerScore === computerScore) {
+        return "Tie game!";
+    }
+}
+
 console.log(game());
+console.log(result());
