@@ -1,3 +1,6 @@
+let playerScore = 0;
+let computerScore = 0;
+
 function game() {
     for (let i = 0; i < 5; i++) {
         //Get computer output//
@@ -60,26 +63,34 @@ function game() {
 
         const computerSelection = computerChoice;
         console.log(playRound(playerSelection, computerSelection));
-    }
-}
 
-function result() {
-    let playerScore = 0;
-    let computerScore = 0;
-    if (roundResult === "You lose. Paper beats Rock." || roundResult === "You lose. Scissors beats Paper." || roundResult === "You lose. Rock beats Scissors.") {
-        computerScore++;
-    } else if (roundResult === "You win. Rock bests Scissors." || roundResult === "You win. Paper beats Rock." || roundResult === "You win. Scissors beats Paper.") {
-        playerScore++;
+        //Tally and rounds//
+        if (roundResult === "You lose. Paper beats Rock." || roundResult === "You lose. Scissors beats Paper." || roundResult === "You lose. Rock beats Scissors.") {
+            computerScore++;
+        } else if (roundResult === "You win. Rock bests Scissors." || roundResult === "You win. Paper beats Rock." || roundResult === "You win. Scissors beats Paper.") {
+            playerScore++;
+        } else if (roundResult === "Tie. Try again.") {
+            computerScore += 0;
+            playerScore += 0;
+    
+        }
+    
+        console.log(playerScore);
+        console.log(computerScore);
+
+        //Result of game//
+    
+        if (playerScore > computerScore) {
+            gameResult = "Player wins!";
+        } else if (playerScore < computerScore) {
+            gameResult = "Computer wins!"
+        } else if (playerScore === computerScore) {
+            gameResult = "Tie game!";
+        }
+    }
     }
 
-    if (playerScore > computerScore) {
-        return "Player wins!";
-    } else if (playerScore < computerScore) {
-        return "Computer wins!"
-    } else if (playerScore === computerScore) {
-        return "Tie game!";
-    }
-}
+
 
 console.log(game());
-console.log(result());
+console.log(gameResult);
