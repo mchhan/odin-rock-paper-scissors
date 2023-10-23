@@ -1,6 +1,5 @@
 let playerScore = 0;
 let computerScore = 0;
-
 function game() {
     for (let i = 0; i < 5; i++) {
         //Get computer output//
@@ -77,18 +76,17 @@ function game() {
     
         console.log(playerScore);
         console.log(computerScore);
+    }
 
-        //Result of game//
-    
-        if (playerScore > computerScore) {
-            gameResult = "Player wins!";
-        } else if (playerScore < computerScore) {
-            gameResult = "Computer wins!"
-        } else if (playerScore === computerScore) {
-            gameResult = "Tie game!";
-        }
+    //Result of game//
+    if (playerScore > computerScore) {
+        gameResult = "Player wins!";
+    } else if (playerScore < computerScore) {
+        gameResult = "Computer wins!"
+    } else if (playerScore === computerScore) {
+        gameResult = "Tie game!";
     }
-    }
+}
 
 
 
